@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,12 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private GameObject gameOverText;
-
     private bool isGameOver = false;
-
-    private int playerScore;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,7 +15,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -31,20 +25,18 @@ public class GameManager : MonoBehaviour
         if (isGameOver && Input.GetKeyDown(KeyCode.Space))
         {
             isGameOver = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartGame();
         }
     }
 
-    public void AddScore(int score)
+
+    public void StartGame()
     {
-        Debug.Log("adding score: " + score + " to current player score: " + playerScore);
-        this.playerScore += score;
-        scoreText.text = "Score: " + playerScore;
+        SceneManager.LoadScene(1);
     }
 
     public void GameOver()
     {
         isGameOver = true;
-        gameOverText.SetActive(true);
     }
 }

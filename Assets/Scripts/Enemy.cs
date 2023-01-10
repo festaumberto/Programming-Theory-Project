@@ -24,7 +24,7 @@ public abstract class Enemy : Health
         base.TakeDamage(damage);
         if (health <= 0)
         {
-            GameManager.Instance.AddScore(points);
+            MainSceneManager.Instance.AddScore(points);
             Destroy(gameObject);
         }
     }

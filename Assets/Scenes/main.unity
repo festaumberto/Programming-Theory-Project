@@ -380,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -253, y: 0}
   m_SizeDelta: {x: 534.2, y: 419.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172698020
@@ -403,7 +403,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: 'Game Over
+
+    press space to play again'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -466,7 +468,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -490.39636, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -995,6 +997,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1607295879932327613, guid: d151c425106f90c4a81b64cc4fbbd72c, type: 3}
   - {fileID: 5601715227765718277, guid: 0593bd0e4eb369a4b9d6222aed9a2d97, type: 3}
+  xRange: 10
 --- !u!4 &860279459
 Transform:
   m_ObjectHideFlags: 0
@@ -1121,8 +1124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e15989b36f29ee4c9e48b9c50f61afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 38563248}
-  gameOverText: {fileID: 172698018}
 --- !u!4 &1078609528
 Transform:
   m_ObjectHideFlags: 0
@@ -1136,6 +1137,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1765689138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765689140}
+  - component: {fileID: 1765689139}
+  m_Layer: 0
+  m_Name: MainSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1765689139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765689138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a852303261eb4f44db19094b32645f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 38563248}
+  gameOverText: {fileID: 172698018}
+--- !u!4 &1765689140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765689138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778549889
 GameObject:
@@ -1265,13 +1311,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  speed: 20
-  xBoundaries: 10
   projectilePrefab: {fileID: 1486683405813059790, guid: 2052f840d6dd7024c98d0aaa4e8e808f, type: 3}
   playerHealth: {fileID: 104615467}
+  speed: 20
+  xBoundaries: 10
   damage: 1
   shootDelay: 0.5
-  canShoot: 1
 --- !u!4 &1851266574
 Transform:
   m_ObjectHideFlags: 0

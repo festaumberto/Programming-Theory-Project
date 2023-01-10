@@ -92,7 +92,7 @@ public class PlayerController : Health
         playerHealth.value = health;
         if (!IsAlive())
         {
-            GameManager.Instance.GameOver();
+            MainSceneManager.Instance.GameOver();
         }
     }
 }
